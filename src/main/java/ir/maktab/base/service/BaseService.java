@@ -12,7 +12,7 @@ public interface BaseService<E extends BaseEntity<ID>, ID extends Serializable> 
 
     void delete(E e);
 
-    Optional<E> loadById(ID id);
+    Optional<E> findById(ID id);
 
-    List<E> loadAll();
+    List<E> findAll();
 }

@@ -41,20 +41,20 @@ public class BaseServiceImpl<E extends BaseEntity<ID>, ID extends Serializable, 
     }
 
     @Override
-    public Optional<E> loadById(ID id) {
+    public Optional<E> findById(ID id) {
         try {
-            return repository.loadById(id);
+            return repository.findById(id);
         } catch (Exception e) {
             return Optional.empty();
         }
     }
 
     @Override
-    public List<E> loadAll() {
-        List<E> eList = repository.loadAll();
+    public List<E> findAll() {
+        List<E> eList = repository.findAll();
         if (eList.isEmpty()) {
             throw new NotFoundClassException("there is no results...!!");
         }
-        return repository.loadAll();
+        return repository.findAll();
     }
 }
