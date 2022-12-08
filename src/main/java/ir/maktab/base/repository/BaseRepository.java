@@ -13,9 +13,9 @@ public interface BaseRepository<E extends BaseEntity<ID>, ID extends Serializabl
 
     void delete(E e);
 
-    Optional<E> loadById(ID id);
+    Optional<E> findById(ID id);
 
-    List<E> loadAll();
+    List<E> findAll();
 
     EntityManager getEntityManager();
 }

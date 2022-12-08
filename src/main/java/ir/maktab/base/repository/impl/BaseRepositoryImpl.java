@@ -33,12 +33,12 @@ public abstract class BaseRepositoryImpl<E extends BaseEntity<ID>, ID extends Se
     }
 
     @Override
-    public Optional<E> loadById(ID id) {
+    public Optional<E> findById(ID id) {
         return Optional.ofNullable(em.find(getEntityClass(), id));
     }
 
     @Override
-    public List<E> loadAll() {
+    public List<E> findAll() {
         return em
                 .createQuery("from " + getEntityClass().getSimpleName(), getEntityClass())
                 .getResultList();
